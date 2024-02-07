@@ -2,6 +2,12 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import tensorflow as tf
+import sys
+import path
+
+dir = path.Path(__file__).abspath()
+sys.path.append(dir.parent.parent)
+path_to_model = '../saved_models/2.h5'
 
 
 class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary Adenoma']
@@ -19,7 +25,7 @@ st.write(f"Welcome to the brain tumor classification tool powered by Convolution
 st.write(f"**Glioma:** A type of brain tumor that starts in the glial cells, which support nerve cells in the brain. They can be either cancerous or non-cancerous.")
 st.write(f"**Meningioma:** A usually non-cancerous brain tumor that forms in the meninges, the protective layers surrounding the brain and spinal cord. It tends to grow slowly over time.")
 st.write(f"**Pituitary Adenoma:** A benign tumor that develops in the pituitary gland, located at the base of the brain. It can disrupt hormone production and cause various symptoms depending on the affected hormones.")
-'''
+
 st.subheader('Sample Images used to train model:', divider='grey')
 
 #Sample images
@@ -41,7 +47,7 @@ c1.image(resized_images[0], caption=f"{class_names[0]}", use_column_width=True)
 c2.image(resized_images[1], caption=f"{class_names[1]}", use_column_width=True)
 c3.image(resized_images[2], caption=f"{class_names[2]}", use_column_width=True)
 c4.image(resized_images[3], caption=f"{class_names[3]}", use_column_width=True)
-'''
+
 #Header
 st.header('Upload MRI image')
 
@@ -49,7 +55,7 @@ st.header('Upload MRI image')
 #Model
 @st.cache_data
 def load_model():
-    model = tf.keras.models.load_model("./saved_models/2.h5")
+    model = tf.keras.models.load_model(path_to_model)
     return model
 
 with st.spinner("Loading Model...."):
