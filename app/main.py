@@ -32,7 +32,6 @@ st.header('Upload MRI image')
 
 
 #Model
-@st.cache_data
 def load_model():
     model = tf.keras.models.load_model(path_to_model)
     return model
