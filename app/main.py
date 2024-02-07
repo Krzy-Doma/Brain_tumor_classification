@@ -2,12 +2,10 @@ import streamlit as st
 import numpy as np
 from PIL import Image
 import tensorflow as tf
-import sys
-import path
+import urllib.request
+import os
 
-dir = path.Path(__file__).abspath()
-sys.path.append(dir.parent.parent)
-path_to_model = '../saved_models/2.h5'
+path_to_model = 'https://raw.githubusercontent.com/Krzy-Doma/brain_tumor_classification/main/saved_models/2.h5'
 
 
 class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary Adenoma']
@@ -36,8 +34,14 @@ def load_model():
     model = tf.keras.models.load_model(path_to_model)
     return model
 
+def load_models():
+    if not os.path.isfile('model.h5'):
+        urllib.request.urlretrieve('https://raw.githubusercontent.com/Krzy-Doma/brain_tumor_classification/main/saved_models/2.h5', 'model.h5')
+    model = tf.keras.models.load_model('model.h5')
+    return model
+
 with st.spinner("Loading Model...."):
-    model = load_model()
+    model = load_models()
     
     
 #Upload file
