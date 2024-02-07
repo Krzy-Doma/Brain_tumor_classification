@@ -3,4 +3,5 @@ base="light"
 primaryColor="#f50707"
 backgroundColor="#b8eae4"
 font="monospace"
-
+[server]
+headless = true
