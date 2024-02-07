@@ -116,5 +116,5 @@ else:
 st.divider()
 
 st.write("")    
-github = 'https://github.com/Krzy-Doma/brain_tumor_classification/tree/main'
+github = 'https://github.com/Krzy-Doma/brain_tumor_classification'
 st.write(f"Check out my [Github](%s)" % github)
