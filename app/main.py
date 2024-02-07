@@ -23,7 +23,7 @@ st.write(f"**Pituitary Adenoma:** A benign tumor that develops in the pituitary 
 st.subheader('Sample Images used to train model:', divider='grey')
 
 #Sample images
-image_paths = ["../set/test/glioma/Te-gl_0035.jpg", "../set/test/meningioma/Te-me_0035.jpg", "../set/test/notumor/Te-no_0035.jpg", "../set/test/pituitary/Te-pi_0035.jpg"]
+image_paths = ["img/glioma.jpg", "img/meningioma.jpg", "img/notumor.jpg", "img/pituitary.jpg"]
 
 c1, c2, c3, c4 = st.columns(4)
 
