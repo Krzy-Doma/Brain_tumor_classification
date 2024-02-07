@@ -8,7 +8,7 @@ class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary Adenoma']
 
 input_shape = (256, 256, 3)
 
-page_icon = Image.open('img/pi.jfif')
+page_icon = Image.open('../img/pi.jfif')
 
 st.set_page_config(page_title='Brain tumor classfication', page_icon=page_icon)
 
@@ -25,7 +25,7 @@ st.write(f"**Pituitary Adenoma:** A benign tumor that develops in the pituitary 
 st.subheader('Sample Images used to train model:', divider='grey')
 
 #Sample images
-image_paths = ["set/test/glioma/Te-gl_0035.jpg", "set/test/meningioma/Te-me_0035.jpg", "set/test/notumor/Te-no_0035.jpg", "set/test/pituitary/Te-pi_0035.jpg"]
+image_paths = ["../set/test/glioma/Te-gl_0035.jpg", "../set/test/meningioma/Te-me_0035.jpg", "../set/test/notumor/Te-no_0035.jpg", "../set/test/pituitary/Te-pi_0035.jpg"]
 
 c1, c2, c3, c4 = st.columns(4)
 
@@ -51,7 +51,7 @@ st.header('Upload MRI image')
 #Model
 @st.cache_data
 def load_model():
-    model = tf.keras.models.load_model("saved_models/2.h5")
+    model = tf.keras.models.load_model("../saved_models/2.h5")
     return model
 
 with st.spinner("Loading Model...."):
