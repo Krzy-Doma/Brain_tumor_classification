@@ -8,7 +8,7 @@ class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary Adenoma']
 
 input_shape = (256, 256, 3)
 
-st.set_page_config(page_title='Brain tumor classfication', page_icon=page_icon)
+st.set_page_config(page_title='Brain tumor classfication')
 
 #Title
 st.title("Brain Tumor classification")
