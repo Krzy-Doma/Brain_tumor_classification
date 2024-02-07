@@ -26,27 +26,6 @@ st.write(f"**Glioma:** A type of brain tumor that starts in the glial cells, whi
 st.write(f"**Meningioma:** A usually non-cancerous brain tumor that forms in the meninges, the protective layers surrounding the brain and spinal cord. It tends to grow slowly over time.")
 st.write(f"**Pituitary Adenoma:** A benign tumor that develops in the pituitary gland, located at the base of the brain. It can disrupt hormone production and cause various symptoms depending on the affected hormones.")
 
-st.subheader('Sample Images used to train model:', divider='grey')
-
-#Sample images
-image_paths = ["img/glioma.jpg", "img/meningioma.jpg", "img/notumor.jpg", "img/pituitary.jpg"]
-
-c1, c2, c3, c4 = st.columns(4)
-
-target_size = (256, 256)
-resized_images = []
-
-for image_path in image_paths:
-    image = Image.open(image_path)
-    resized_image = image.resize(target_size)
-    resized_images.append(resized_image)
-    
-
-#Load images
-c1.image(resized_images[0], caption=f"{class_names[0]}", use_column_width=True)
-c2.image(resized_images[1], caption=f"{class_names[1]}", use_column_width=True)
-c3.image(resized_images[2], caption=f"{class_names[2]}", use_column_width=True)
-c4.image(resized_images[3], caption=f"{class_names[3]}", use_column_width=True)
 
 #Header
 st.header('Upload MRI image')
