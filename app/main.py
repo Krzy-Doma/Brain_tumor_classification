@@ -8,8 +8,6 @@ class_names = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary Adenoma']
 
 input_shape = (256, 256, 3)
 
-page_icon = Image.open('../img/pi.jfif')
-
 st.set_page_config(page_title='Brain tumor classfication', page_icon=page_icon)
 
 #Title
