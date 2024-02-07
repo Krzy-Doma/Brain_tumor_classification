@@ -49,7 +49,7 @@ st.header('Upload MRI image')
 #Model
 @st.cache_data
 def load_model():
-    model = tf.keras.models.load_model("../saved_models/2.h5")
+    model = tf.keras.models.load_model("./saved_models/2.h5")
     return model
 
 with st.spinner("Loading Model...."):
