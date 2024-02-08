@@ -4,5 +4,6 @@ The aim of this project was to create a Convolutional Neural Network (CNN) model
 
 Additionally, the project includes a web application created using Streamlit, providing a user-friendly interface to interact with the trained model.
 
-You can find the website <b>[here](https://braintumorclassificationapp.streamlit.app/)</b>
+You can find the website <b>[here](https://braintumorclassificationapp.streamlit.app/)</b>.
+
 The dataset used for training and evaluation consists of a collection of MRI images of patients with various types of brain tumors, including glioma, meningioma, and pituitary adenoma. The dataset is sourced from [here](https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset).
